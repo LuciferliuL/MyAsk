@@ -1,0 +1,187 @@
+/*��һҳ*/
+.section:nth-child(1) {
+    background-color: yellowgreen;
+    padding-top: 100px;
+}
+.section .one{
+    background: url("../image/logo.png") no-repeat center;
+    height: 186px;
+}
+.section .two{
+    margin: 40px 0;
+    text-align: center;
+}
+.section .three{
+    background: url("../image/info_1.png") no-repeat center;
+    height: 49px;
+}
+/*�ڶ�ҳ*/
+.section:nth-child(2) {
+    background-color: orange;
+}
+.section .shield{
+    width: 480px;
+}
+.index01>div{
+    display: flex;
+    justify-content: space-around;
+}
+.index01 .shield{
+    align-self: center;
+}
+.index01 div:nth-child(2){
+    align-self: center;
+}
+/*����ҳ*/
+.section:nth-child(3) {
+    background-color: deepskyblue;
+    position: relative;
+    overflow: hidden;
+}
+.index02>div{
+    display: flex;
+    justify-content: space-around;
+}
+.index02 .info3{
+    align-self: center;
+    background: url("../image/info_3.png") no-repeat center;
+    width: 631px;
+    height: 278px;
+}
+.index02 .circle{
+    background: url("../image/circle.png") no-repeat center;
+    height: 449px;
+    width: 453px;
+    align-self: center;
+}
+.index02 .hot{
+    background: url("../image/rocket.png") no-repeat center;
+    height: 204px;
+    width: 203px;
+    align-self: center;
+    position: absolute;
+    bottom: -200px;
+    left: 0px;
+    /*transform: translateX(1080px) translateY(-480px);*/
+}
+/*����ҳ*/
+.section:nth-child(4) {
+    background-color: mediumpurple;
+}
+
+.index03>div{
+    display: flex;
+    justify-content: space-around;
+}
+.index03 .left{
+    align-self: flex-end;
+    position: relative;
+    width: 529px;
+    height: 480px;
+    transform: translateX(-800px);
+}
+.index03 .left .search{
+    background: url("../image/search.png") no-repeat center;
+    width: 529px;
+    height: 66px;
+}
+.index03 .left .logo{
+    background: url("../image/key.png") no-repeat;
+    width: 0px;
+    height: 22px;
+    position: absolute;
+    top: 22px;
+    left: 15px;
+}
+.index03 .left .content{
+    background: url("../image/result.png") no-repeat;
+    width: 529px;
+    height: 0px;
+}
+.index03 .right{
+    background: url("../image/info_4.png") no-repeat center;
+    width: 612px;
+    height: 299px;
+    align-self: center;
+}
+/*����ҳ*/
+.section:nth-child(5) {
+    background-color: palegreen;
+}
+.index04>div{
+    display: flex;
+    flex-direction: column;
+    /*position: relative;*/
+}
+.index04 .nav{
+    background: url("../image/info_5.png") no-repeat center;
+    width: 100%;
+    height: 134px;
+    /*position: absolute;*/
+}
+.index04 .back{
+    background: url("../image/extra.png") no-repeat bottom right,
+    url("../image/toolbar.png") no-repeat top;
+    width: 1004px;
+    flex: 1;
+    margin: 0 auto;
+    /*position: absolute;*/
+}
+.index04 .solid1{
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*动画效果*/
+/*统一使用  类名.animation 来为某个含有该类名的标签添加动画效果*/
+.xx .two img{
+    opacity:0;
+    margin:0 15px;
+}
+.xx.animation .two img{
+    opacity:1;
+    margin: 0;
+    transition: all 2s;
+}
+
+
+.index01 .shield img:nth-child(5){
+    transform:rotate(45deg) translate(200px);
+}
+.index01.animation .shield img:nth-child(5){
+    transform: rotate(0deg) translate(0);
+    transition: all 1s;
+}
+
+
+.index02.animation .hot{
+    transition: all 2s;
+    transform: translateX(1400px) translateY(-580px);
+}
+
+
+.index03.animation .left{
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+.index03.animation .left .logo{
+    width: 99px;
+    transition-duration: 1s;
+    transition-delay: 1.5s;
+    transition-timing-function: steps(5);
+}
+
+.index03.animation .left .content{
+    height: 372px;
+    transition-duration: 1s;
+    transition-delay: 2.5s;
+}

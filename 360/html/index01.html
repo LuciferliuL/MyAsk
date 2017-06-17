@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/CSS01.css"/>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script>
+        $(function () {
+            $('#Demo').fullpage({
+                afterLoad:function(anchorLink,index){
+//                    使用section来添加动画  是因为这样就不会造成动画的添加是某一个标签的单独独享 减少代码
+//                    先清空所有动画  在添加
+                    $('.section').removeClass('animation');
+                    setTimeout(function(){
+                        $('.section').eq(index-1).addClass('animation');
+                    },100)
+            }
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="Demo">
+    <div class="section xx">
+        <div class="one"></div>
+        <div class="two">
+            <img src="../image/text_1.png" alt=""/>
+            <img src="../image/text_2.png" alt=""/>
+            <img src="../image/text_3.png" alt=""/>
+            <img src="../image/text_4.png" alt=""/>
+            <img src="../image/text_5.png" alt=""/>
+            <img src="../image/text_6.png" alt=""/>
+            <img src="../image/text_7.png" alt=""/>
+            <img src="../image/text_8.png" alt=""/>
+        </div>
+        <div class="three"></div>
+    </div>
+    <div class="section index01">
+        <div class="shield">
+            <img src="../image/shield_1.png" alt=""/>
+            <img src="../image/shield_2.png" alt=""/>
+            <img src="../image/shield_3.png" alt=""/>
+            <img src="../image/shield_4.png" alt=""/>
+            <img src="../image/shield_5.png" alt=""/>
+            <img src="../image/shield_6.png" alt=""/>
+            <img src="../image/shield_7.png" alt=""/>
+            <img src="../image/shield_8.png" alt=""/>
+            <img src="../image/shield_9.png" alt=""/>
+        </div>
+        <div>
+            <img src="../image/info_2.png" alt=""/>
+        </div>
+    </div>
+    <div class="section index02">
+        <div class="info3"></div>
+        <div class="circle"></div>
+        <div class="hot"></div>
+    </div>
+    <div class="section index03">
+        <div class="left">
+            <div class="search"></div>
+            <div class="logo"></div>
+            <div class="content"></div>
+        </div>
+        <div class="right"></div>
+    </div>
+    <div class="section index04">
+        <div class="nav"></div>
+        <div class="back"></div>
+        <div class="solid1"></div>
+        <div class="solid2"></div>
+        <div class="solid3"></div>
+        <div class="solid4"></div>
+    </div>
+</div>
+</body>
+</html>
