@@ -1,0 +1,81 @@
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid gray;
+}
+.wjs_header .row {
+  height: 100%;
+  text-align: center;
+}
+.wjs_header .row div:nth-of-type(-n+3) {
+  border-right: 1px solid gray;
+}
+.wjs_header .row .wjs_Img {
+  display: block;
+  position: relative;
+}
+.wjs_header .row .wjs_Img:hover img {
+  display: block;
+}
+.wjs_header .row .wjs_Img img {
+  position: absolute;
+  display: none;
+  border: 1px solid #000000;
+  top: 48px;
+  left: 50%;
+  border-top: none;
+  z-index: 999;
+  transform: translateX(-50%);
+}
+.wjs_header .row div:last-of-type .btn-default {
+  background: #e94222;
+  border-color: #e94222;
+  color: #ffffff;
+  padding: 3px 15px;
+}
+.wjs_header .row div:last-of-type .btn-link {
+  color: #e94222;
+}
+.wjs_header .row div:last-of-type .btn-link:hover {
+  text-decoration: none;
+}
+.wjs_nav {
+  margin-bottom: 0px;
+}
+.wjs_nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+}
+.wjs_nav .navbar-brand .wjs_icon {
+  font-size: 40px;
+}
+.wjs_nav .navbar-brand span:first-of-type {
+  color: #e94222;
+}
+.wjs_nav .navbar-brand span:last-of-type {
+  color: #000;
+}
+.wjs_nav .navbar-collapse > .navbar-nav > li > a {
+  line-height: 50px;
+  font-size: 16px;
+}
+.wjs_nav .navbar-collapse > .navbar-nav > li > a:hover {
+  color: #e94222;
+  border-bottom: 2px solid #e94222;
+}
+.wjs_nav .navbar-collapse > .navbar-nav > li > a:focus {
+  border-bottom: 2px solid #e94222;
+}
+.wjs_nav .navbar-collapse > .navbar-nav .active > a {
+  background: transparent;
+}
+.wjs_mobile_img .item {
+  height: 410px;
+}
+.wjs_mobile_img .item img {
+  display: block;
+  height: 410px;
+  width: 100%;
+  background-position: center;
+  background-size: cover ;
+}
