@@ -63,6 +63,7 @@
   .navbar-collapse{
     >.navbar-nav{
       >li{
+          border-bottom: 2px solid transparent;
         >a{
           line-height: 50px;
           font-size: 16px;
@@ -87,12 +88,15 @@
 .wjs_mobile_img{
   .item{
     height: 410px;
-    img{
-      display: block;
-      height: 410px;
+    >a{
       width:100%;
-      background-position: center;
-      background-size:cover ;
+      height: 100%;
+      display: block;
+      >img{
+        display: block;
+        height: 100%;
+        background-size:cover ;
+      }
     }
   }
 }

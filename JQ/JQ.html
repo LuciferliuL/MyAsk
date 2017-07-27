@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #dv {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid gray;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tab > li {
+            width: 24%;
+            height: 100%;
+            border: 1px solid red;
+            float: left;
+        }
+
+        .dian {
+            position: relative;
+            border: 1px dashed greenyellow;
+        }
+
+        .dian > li {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            display: none;
+        }
+
+        .active {
+            background: skyblue !important;
+        }
+
+        .selector {
+            display: block !important;
+        }
+
+        .btn1{
+            width: 120px;
+            height: 20px;
+        }
+        .btn2{
+            width: 120px;
+            height: 20px;
+        }
+        .box,.box2,.box3,.box4,.box5,.box6{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+        .box{
+            background: red;
+        }
+        .box2{
+            background: orange;
+        }
+        .box3{
+            background: skyblue;
+        }
+        .box4{
+            background: deeppink;
+        }
+        .box5{
+            background: darkorchid;
+        }
+        .box6{
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+    <ul class="tab">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="dian">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+<button class="btn1">隐藏</button>
+<button class="btn2">显示</button>
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+<script src="jquery-1.12.2.min.js"></script>
+<script>
+
+    $(function () {
+        $('.btn1').click(function(){
+//            参数有
+//            1.是键值对---对象
+//            2.时间---1000毫秒
+//            3.函数---回调函数
+//            原理 给出动画需要改变的属性和属性值，以键值对显示
+            $('.box').animate({
+                'width':'200px',
+                'height':'300px',
+            },function(){
+                $('.box2').animate({
+                    'opacity':'.3'
+                });
+            })
+        })
+    })
+
+
+//    $(function(){
+//        $('.box').click(function(){
+//            $(this).slideUp(1000);
+//        })
+//        $('.box2').click(function(){
+//            $(this).slideDown(1000);
+//        })
+//        $('.box3').click(function(){
+//            $(this).slideToggle(1000);
+//        })
+//        $('.box4').click(function(){
+//            $(this).fadeIn(1000);
+//        })
+//        $('.box5').click(function(){
+//            $(this).fadeOut(1000);
+//        })
+//        $('.box6').click(function(){
+//            $(this).fadeToggle(1000);
+//        })
+//        $('.box2').click(function(){
+//            $(this).fadeTo(1000,.3);
+//        })
+//    })
+
+//    $(function(){
+//        $('.box').click(function(){
+//            $(this).hide(800,function(){
+//                $(this).remove();
+//                hide()是使元素的display为none；
+//                remove()是让元素永远的消失
+//            })
+//        })
+//    })
+
+
+//    $(function(){
+//        $('.btn1').click(function(){
+//            //可以写时间 字符串 ---》slow normal fast
+//            //argument.callee  相当于递归，后面的都会重复执行
+//            $('.box').prev().hide(500,arguments.callee);
+//        })
+//        $('.btn2').click(function(){
+//            $('.box').siblings().show(500,arguments.callee);
+//        })
+//    })
+
+
+//    $(function () {
+//        $('.tab>li').mouseenter(function () {
+            //.next()获取当前元素下一个兄弟元素
+//            $(this).next().css('backgroundColor','red');
+            //.nextAll()获取当前元素后面所有兄弟元素
+//            $(this).nextAll().css('backgroundColor','red')
+            //.prev()获取当前元素前一个兄弟元素
+//            $(this).prev().css('backgroundColor','skyblue')
+            //.prevAll()获取当前元素前面所有兄弟元素
+//            $(this).prevAll().css('backgroundColor','skyblue')
+            //.siblings()获取除当前元素外所有兄弟元素
+//            $(this).siblings().css('backgroundColor','skyblue')
+//        })
+//    })
+
+
+    //    $(".tab>li").mouseover(function(){
+    //        $(this).siblings('li').removeClass('active');
+    //        $(this).addClass('active');
+    //        var count = $(this).index();
+    //        $('.dian>li:eq('+count+')').siblings('li').removeClass('selector');
+    //        $('.dian>li:eq('+count+')').addClass('selector')
+    //    }).click(function(){
+    //        $(this).siblings('li').css('backgroundColor','red');
+    //    }).mouseleave(function(){
+    //        $(this).siblings('li').css('backgroundColor','transparent')
+    //    })
+
+
+    //    //样式的添加和移除
+    //    $('#dv').addClass('cls').addClass('cls2');//添加多个样式
+    //    $('#dv').addClass('cls cls2');//同上
+    //    $('#dv').removeClass('cls');//移除指定的样式
+    //    $('#dv').removeClass();//移除所有样式
+    //
+    //    //判断元素是否应用了类样式
+    //    $(function(){
+    //        //点击第一个按钮添加类样式
+    //        $('btn1').click(function(){
+    //            $('#dv').addClass('cls');
+    //        })
+    //        //点击第二个按钮查询是否添加cls
+    //        $('btn2').click(function(){
+    //            $('#dv').hasClass('cls');
+    //            console.log(result);
+    //        })
+    //    })
+    //
+    //    $('btn').click(function(){
+    //        $('body').toggleClass("cls");//切换类样式，有就删，没有就加
+    //    })
+</script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //    function Person(name,age,gender){
+    //        this.name = name;
+    //        this.age = age;
+    //        this.gender = gender;
+    //    }
+    ////        Person.prototype.say = function(){
+    ////            console.log('chi');
+    ////        }
+    //    Person.prototype = {
+    //        constructor : Person,
+    //        say:function(){
+    //            console.log('chi');
+    //        },
+    //        eat:function(){
+    //            console.log('eat');
+    //        }
+    //    }
+    //        var p1 = new Person();
+    //        p1.say();
+    //
+    //
+    //    if (p1.__proto__){
+    //        console.log('支持');
+    //    }else{
+    //        console.log('不支持');
+    //    }
+    //
+    //    var getsum2 = Function('num1','num2','return num1+num2');
+    //    console.log(getsum2(1, 2));
+    //
+    //    var getsum = Function('min','max','sum','for(var i = min;i<=max;i++){sum+=i};return sum;')
+    //    console.log(getsum(2,5,0));
+    //
+    //    eval("alert('123')");
+    //
+    //    (new Function("alert('Function')"))();
+    //
+    //    (function(){alert('function')})();
+    //
+    ////    混入mix
+    //    function _mix_(obj,obj1){
+    //        for(var k in obj1){
+    //            obj[k] = obj1[k];
+    //        }
+    //    }
+    //    var o1 = {name : 'abc',age : 123};
+    //    var o2 = {};
+    //    _mix_(o2,o1);
+    //    console.log(o2);
+    //
+    ////    希望混入是一个方法，把别人的东西加到自己身上
+    //    var o = {
+    //        extend:function (obj) {
+    //            for(var k in obj){
+    //                this[k] = obj[k];
+    //            }
+    //        }
+    //    }
+    ////    现在的开发库里面都使用extend名字 而不是_mix_
+    ////    extend可是多个参数，那么都加到自己身上
+    ////    函数中有一个默认的对象存在arguments 她存储所有传入的参数
+    //    var o = {
+    //        extend:function (obj) {
+    //            for(var i = 0;i < arguments.length;i ++){
+    //                for(var k in arguments[i]){
+    //                    this[k] = obj[i][k];
+    //                }
+    //            }
+    //
+    //        }
+    //    }
+    //    function Person () {  };
+    //        Person.prototype.extend = function(obj){
+    //            for(var k in obj){
+    //                this[k] = obj[k];
+    //            }
+    //        };
+    //
+    //    var p = new Person();
+    //    //继承
+    //    Person.prototype.extend({
+    //        say:function(){
+    //            console.log('q');
+    //        },
+    //        walk:function () {
+    //            console.log('a');
+    //        }
+    //    })
+
+    //
+    ////    构造函数
+    //    function fn(){}
+    ////    原型对象
+    //    fn.prototype.extend = function(obj){
+    //        for(var k in obj){
+    //            this[k] = obj[k];
+    //        }
+    //    }
+    ////    实例对象
+    //    var o = new fn();
+    ////    原型添加
+    //    fn.prototype.extend({
+    //        say : function () {
+    //            console.log('q');
+    //        }
+    //    });
+    //fn.prototype.extend({
+    //})
+    //    o.say();
+    //    fn.prototype.extend({
+    //        say : function () {
+    //            console.log('a');
+    //        }
+    //    })
+    //
+    //    o.say();
+
+    //   var o = {name : 'abc',age : 20}
+    //   var obj = Object.create( o );
+    ////   ES3 中的代码来实现ES5中的create
+    //    Object.create = function (o) {
+    //        function F() {
+    //            F.prototype = o;
+    //            return new F();
+    //        }
+    //    }
+
+    //
+    //    function foo() {
+    //        getName = function () {
+    //            alert(1);
+    //        };
+    //        return this;
+    //    }
+    //    foo.getName = function () {
+    //        alert(2);
+    //    };
+    //    foo.prototype.getName = function () {
+    //        alert(3);
+    //    };
+    //    var getName = function () {
+    //        alert(4);
+    //    };
+    //    //    function getName() {
+    //    //        alert(5);
+    //    //    };
+    //    foo.getName();
+    //    getName();
+    //    foo().getName();
+    //    getName();
+    //
+    //    new foo.getName();
+    //    new foo().getName();
+    //    new new foo().getName();
+    //    console.log(new foo());
+    //    function foo ( num1 , num2){
+    //        console.log(this);
+    //        return num1 + num2 ;
+    //    }
+    //
+    //    var p = {};
+    //    var a = foo.apply(null,[123 , 456]);
+    //    var b = foo.apply(p,[123,456]);
+    //
+    //
+    //    function f (){
+    //        console.log('a');
+    //    }
+    ////    f();
+    //    var x = new f();
+    //    console.log(x);
+
+
+    //    var r = /^[0-9a-zA-Z]+@[0-9a-zA-Z]+(\.[0-9a-zA-Z]+)+$/;
+    //    console.log(r.test('asd@qq.com'));
+    //
+    //
+    //    var str = 'ajdoasr12412joijo3joi45jo43j5o45ji';
+    //    var t = /\d+/g;
+    //    var result = t.exec( str );
+    //
+    //    var st = 'asdada@qq.com';
+    //    var a = /([\w\d]+)@([\w\d]+(?:\.[\w]+)+)/g;
+    //    var res;
+    //    while(res = a.exec(st)){
+    //        console.log(res[0] + '/' + res[1] + '/'+res[2]);
+    //    }
+
+
+    //    st.replace(/([\w\d]+)@([\w\d]+(?:\.[\w]+)+)/g,function (s, g1, g2) {
+    //        console.log(s);
+    //        console.log(g1);
+    //        console.log(g2);
+    ////        拆分用户名获取第一个字母
+    //        var first = g1.charAt( 0 );
+    //        var sta = [];
+    //        for(var i = 0;i < g1.length;i ++){
+    //            sta.push('*');
+    //        }
+    //        console.log(sta.join(""));
+    //        console.log(first+sta.join("")+'@'+ g2);
+    //    })
+
+    //面试题
+    //    var str = '我我我.....是是是....一一一....个超级..大大..帅帅....哥哥哥';
+    //    var str = str.replace(/\./g,'');//去掉点
+    //    console.log(str);
+    //    str = str.replace(/(.)\1+/g,'$1');//去掉重复得  然后添加一个
+    //    console.log(str);
+
+    //注意：：'字符串' in 对象
+    //       该字符串是否在对象中存在一个属性，与之同名。
+    //    var o = (num : 123)
+    //    num in o -- true
+    //      age in o -- false
+    //    if('a' in window){
+    //        var a = 123;
+    //    }
+    //    console.log(a);
+
+
+    //    console.log(num);//undefined
+    //    var num = 123;
+    //    console.log(num);//123
+
+    //    函数各种定义
+
+    //        func();
+    //        function func(){
+    //            console.log('a');
+    //        }
+    //函数声明独立代码执行，因此函数预解析会在执行之前处理完毕，在开发得时候，将函数全部声明都放在后面，前面为了保证代码得紧凑。
+
+
+    //函数表达式
+//    var func = function () {
+//        console.log('b');
+//    };
+//    func();
+//    //使用这个方式定义函数，实际上是利用了函数是js中得一个数据类型得特点。利用赋值使用变量存储函数得引用，此时没有函数得声明，有变量得声明
+//    //        PS：如果将调用放在声明之前，会报错
+//
+//
+//    //    函数表达式得名字问题
+//    //函数.name可以获取函数得名字
+//    var f1 = function () {
+//    };//name式空，function得前面没有些名字所以是空
+//    console.log(f1.name);
+//    function f2() {
+//        console.log(f2.name);
+//    }
+//    //    函数表达式可以带有函数名
+//
+//    function func() {
+//    }//声明了函数
+//    //in 运算符
+//    console.log('func' in window);
+//    console.log(typeof func);
+//    func = 123;
+//    console.log(func);//123
+//    console.log(typeof func);//number
+
+
+//    var num = 123;
+//    function f1() {
+//        console.log(num);
+//    }
+//    function f2() {
+//        console.log(num);
+//        num = 456;//改变了外面num的值
+//        f1();
+//        console.log(num);
+//    }
+//    f2();
+
+//    (function (a){
+//        console.log(a);
+//        var a = 10;
+//        console.log(a);
+//        function a(){
+//            console.log(a);
+//        }
+//    })(100)
+//    var name = "The Window";
+//    var object = {
+//        name : "My Object",
+//        getNameFunc : function(){
+//            return function(){
+//                return this.name;
+//            };
+//        }
+//    };
+//    console.log(object.getNameFunc());
+//    alert(object.getNameFunc()());
+
+//    var o = {
+//        name : "a",
+//        f : function () {
+//            return function () {
+//                return this.name;
+//            }
+//        }
+//
+//    }
+//    alert(o.f()());
+
+//    var name = "The Window";
+//    var object = {
+//        name : "My Object",
+//        getNameFunc : function(){
+//            var that = this;
+////            console.log(this);
+//            return function(){
+//               return function () {
+//                   return function () {
+//                       return function () {
+//                           return that.name;
+//                       }
+//                   }
+//               }
+//            };
+//        }
+//    };
+//    alert(object.getNameFunc()()()()());
+
+    //经典面试题
+    var arr = [
+        {name : '张三1'},
+        {name : '张三2'},
+        {name : '张三3'},
+        {name : '张三4'}
+    ]
+    for(var i = 0;i < arr.length;i ++){
+        arr[i].say = function () {
+            console.log(arr[i].name);
+        } ;
+    }
+//    for(var i = 0;i < arr.length;i ++){
+//        arr[i].say();
+//    }
+    for(var j = 0;j < arr.length;j ++){
+        arr[j].say();
+    }
+
+</script>
